@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Lishi
 # @Date:   2018-06-17 09:51:56
-# @Last Modified by:   zhanglishi001
-# @Last Modified time: 2018-06-26 12:09:24
+# @Last Modified by:   stonels0
+# @Last Modified time: 2018-07-11 10:03:46
 
 import os,sys
 import MySQLdb
@@ -52,6 +52,7 @@ def create_table():
 def insertData():
     # 打开数据库连接
     db = MySQLdb.connect("localhost", "root", "root", "TESTDB", charset='utf8' )
+    
     
     # 使用cursor()方法获取操作游标 
     cursor = db.cursor()
