@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: zhanglishi001
 # @Date:   2018-07-19 16:49:29
-# @Last Modified by:   zhanglishi001
-# @Last Modified time: 2018-07-19 18:11:03
+# @Last Modified by:   stonels0
+# @Last Modified time: 2018-07-19 18:37:06
 
 from __future__ import print_function
 import os,sys
@@ -46,6 +46,14 @@ def read_excel():
 
     # sheet的名称，行数，列数
     print(sheet2.name,sheet2.nrows,sheet2.ncols)
+    print(sheet2.merged_cells)
+
+    merge = []
+    for (rlow,rhigh,clow,chigh) in sheet2.merged_cells:
+        merge.append([rlow,clow])
+
+    for index in merge:
+        print sheet2.cell_value(index[0],index[1])
 
     # 获取整行和整列的值（数组）
     rows = sheet2.row_values(3) #获取第四行内容
